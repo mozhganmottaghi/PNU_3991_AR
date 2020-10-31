@@ -19,6 +19,7 @@
 
 -----------------
 
+
 ## روز و ساعت ارائه دروس
 
 <table style="width:100%">
@@ -50,7 +51,7 @@
      <th ><a </a> </th>
      <th ><a </a></th>
      <th><a </a></th>
-     <th><a </a></th>
+     <th><a 
      <th><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteraction">تعامل انسان و كامپيوتر</a></th>
     <th ></th>   
     <th>دوشنبه</th>
