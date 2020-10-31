@@ -38,25 +38,25 @@ https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteract
     <th>10-12</th>
     <th>8-10</th>
     <th>روز</th>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
     <th ></th>
     <th ><a  href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/Theory-of-Languages-and-Machines">نظريه زبانهاوماشين ها 02-1115157</a></th>
     <th ><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/Theory-of-Languages-and-Machines" >نظريه زبانهاوماشين ها 01-1115157</a></th>
     <th></th>
     <th></th>
     <th>شنبه</th>
-  </tr>
-   <tr>
+    </tr>
+    <tr>
     <th ></th>
     <th ></th>
     <th></th>
     <th></th>
     <th ></th>
     <th>یک شنبه</th>
-  </tr>
-   <tr>
-     <th ><a href=
+    </tr>
+    <tr>
+    <th ><a href=
              " >روش پژوهش و ارائه02-1322010</a> </th>
      <th ><a  href=
        ">روش پژوهش و ارائه01-1322010</a></th>
