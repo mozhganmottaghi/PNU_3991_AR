@@ -60,7 +60,7 @@
    <tr>
      <th><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteraction">سیستم های عامل</a></th>
     <th ></th>
-     <th><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteraction">مهندسی نرم افزار 2</a></th>
+     <th><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteraction"> مهندسی نرم افزار 2 </a></th>
     <th></th>
     <th ></th>
     <th>سه شنبه</th>
@@ -69,7 +69,7 @@
     <th ></th>
     <th ></th>
     <th></th>
-    <th></th>
+    <th><a href="https://github.com/AliRazavi-edu/PNU_3991/tree/master/_BSc/HumanComputerInteraction">انقلاب اسلامی</a></th>
      <th ><a </a></th>
     <th>چهارشنبه</th>
   </tr>
