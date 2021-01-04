@@ -7,6 +7,8 @@
 - [آدرس رزومه]https://mozhganmottaghi.github.io/mozhgan.mottaghi/
 - [sop]https://github.com/mozhganmottaghi/SOP
 
+-[My Certificate](java.jpeg)
+
 
 -------------------
 ## Winter Semester Courses 1399/2020
@@ -84,4 +86,4 @@
 </table>
 
 
--[my Certificate](java.jpeg)
+
