@@ -1,0 +1,910 @@
+\documentstyle[fmultico,farsi,slashbox,12pt]{taymazbook}
+%\stackrel{\InF{}ş‰ß ä‰±‰‘¤– ¤ “‰‘„ı \EnF{}}{\InF{}ş‰ß ä‰±‰‘¤– õ‰ü ÷‰ş‰Æ‰À \EnF{}}
+\input{amssym}
+%\input{color}
+
+\input{epsf}
+\oddsidemargin -.8cm
+\evensidemargin  -.4cm
+
+\headheight 11pt
+\headsep 1.2cm
+
+\textwidth 16.5cm
+\textheight 24.5cm
+
+\topmargin -.8cm
+
+\footskip .4in
+\footnotesep 12pt
+
+
+\parindent 0.5cm
+
+\pagestyle{headings}
+
+\renewcommand{\baselinestretch}{1.5}
+%\stackrel{\InF{}ş‰ß ä‰±‰‘¤– ¤ “‰‘„ı \EnF{}}{\InF{}ş‰ß ä‰±‰‘¤– õ‰ü ÷‰ş‰Æ‰À \EnF{}}
+\newenvironment{hereproc}
+    { \vskip0.5cm\noindent\begin{Sbox}%
+      \setlength{\myleng}{\textwidth}%
+      \addtolength{\myleng}{-2\fboxsep}%
+      \addtolength{\myleng}{-2\fboxrule}%
+      \begin{minipage}{\myleng}\begin{center}\vskip0.5cm}%
+{\vskip0.5cm\end{center}\end{minipage}\end{Sbox}\fbox{\TheSbox}\vskip0.1cm}%
+
+\newenvironment{procedure}[1]
+    {\begin{figure}[#1]
+      \begin{Sbox}%
+      \setlength{\myleng}{\textwidth}%
+      \addtolength{\myleng}{-2\fboxsep}%
+      \addtolength{\myleng}{-2\fboxrule}%
+      \begin{minipage}{\myleng}\begin{center}\vskip0.5cm}%
+{\vskip0.5cm\end{center}\end{minipage}\end{Sbox}\fbox{\TheSbox}\end{figure}}%
+
+\newenvironment{mybox}
+    { \vskip0.1cm\noindent
+      \begin{Sbox}%
+      \setlength{\myleng}{\textwidth}%
+      \setlength{\fboxsep}{3mm}%
+      %\setlength{\fboxrule}{5mm}
+      \addtolength{\myleng}{-2\fboxsep}%
+      \addtolength{\myleng}{-2\fboxrule}%
+      \begin{minipage}{\myleng}\begin{center}\vskip0.1cm}%
+{\vskip0.3cm\end{center}\end{minipage}\end{Sbox}\hspace*{2cm}\shadowbox{\TheSbox}\vskip0.3cm}%
+
+%\begin{multicols}{2}
+
+\newtheorem{pretheorem}{{\bf ì‰Ì‰ƒ‰‚ }}
+\renewcommand{\thepretheorem}{{\arabic{pretheorem}}}
+\newenvironment{theorem}{\begin{pretheorem}{\hspace{-0.5em} {\bf.}}}
+                          {\end{pretheorem}}
+
+\newtheorem{prelemma}{{\bf ó‰İ }}
+\renewcommand{\theprelemma}{{\arabic{prelemma}}}
+\newenvironment{lemma}{\begin{prelemma}{\hspace{-0.5em} {\bf.}}}
+                         {\end{prelemma}}
+
+
+\newtheorem{prealgorithm}{{\Large \bf ó‰Ú‰¤ş‰µ‰İ }}
+\renewcommand{\theprealgorithm}{{\arabic{prealgorithm}}}
+\newenvironment{algorithm}{\begin{prealgorithm}}
+                            {\end{prealgorithm}}
+
+
+\newtheorem{preexample}{{\bf õ‰·‰‘ñ }}
+\renewcommand{\thepreexample}{{\arabic{preexample}}}
+\newenvironment{example}{\begin{preexample}{\hspace{-0.5em} {\bf.}}}
+                          {\end{preexample}}
+
+\newtheorem{preprob}{{\bf õ‰Æ‰ÿ‰Ü‰‚ }}
+\renewcommand{\thepreprob}{{\arabic{preprob}}}
+\newenvironment{prob}{\vspace{-5mm}\begin{preprob}{\hspace{-0.5em} {\bf.}}}
+                          {\end{preprob}}
+
+\newtheorem{preprobb}{{\bf õ‰Æ‰ÿ‰Ü‰‚ }}
+\renewcommand{\thepreprobb}{}
+\newenvironment{probb}{\begin{preprobb}{\hspace{-0.5em} {\bf.}}}
+                          {\end{preprobb}}
+
+\newtheorem{preconj}{{\bf Ÿ‰À§ }}
+\renewcommand{\thepreconj}{}
+\newenvironment{conj}{\begin{preconj}{\hspace{-0.5em} {\bf.}}}
+                          {\end{preconj}}
+
+\newenvironment{proof}{{\bf ™‰±‰‘–.} \rm }{\hfill{\InE{}$\Box$\EnE{}}}
+
+
+\def\emline#1#2#3#4#5#6{%
+       \put(#1,#2){\special{em:moveto}}%
+       \put(#4,#5){\special{em:lineto}}}
+\def\newpic#1{}
+
+
+\newcounter{mnum}
+\newenvironment{mlist}{\setcounter{mnum}{0}     % 1) 2) 3)
+\begin{list}{\arabic{mnum}(}{\usecounter{mnum}\leftmargin=6mm
+    \labelwidth=7mm\labelsep=2mm\setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{0mm}
+    }}{\end{list}}
+
+\newenvironment{elist}{\setcounter{mnum}{0}      % 1. 2. 3.
+\begin{list}{\arabic{mnum}.}{\usecounter{mnum}\rightmargin=6mm
+    \labelwidth=7mm\labelsep=2mm\topsep=0mm\partopsep=0cm\itemsep=-1.7mm
+    }}{\end{list}}
+
+\newcounter{snum}         %  a  b  c
+\newenvironment{slist}{\setcounter{snum}{0}
+\begin{list}{\insertenglish(\alph{snum})\endenglish}{\usecounter{snum}\rightmargin=4mm
+    \labelwidth=5mm\labelsep=2mm\setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \partopsep=0cm\itemsep=0mm\topsep=0mm}}{\end{list}}
+
+\newenvironment{ilist}{     %itemized list with bullete
+\begin{list}{$\bullet$}{\rightmargin=4mm
+    \labelwidth=5mm\labelsep=2mm\setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \partopsep=0cm\itemsep=0mm\topsep=0mm}}{\end{list}}
+
+
+\newenvironment{tilist}{     %itemized list with triangleleft
+\begin{list}{$\triangleleft$}{\rightmargin=4mm
+    \labelwidth=5mm\labelsep=2mm\setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \partopsep=0cm\itemsep=0mm\topsep=0mm}}{\end{list}}
+
+
+
+\newenvironment{jlist}{     %itemized list with bullete
+\begin{list}{}{\rightmargin=4mm
+    \labelwidth=5mm\labelsep=2mm\setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \partopsep=0cm\itemsep=0mm\topsep=0mm}}{\end{list}}
+
+
+
+
+
+
+\newcounter{mcounter}
+%--------------- ó‰ƒ‰Æ‰´ “‰Àøö ê‰Âø¤ê‰µ‰Ú‰ü
+\newenvironment{hlist}{
+\begin{list}{}{\rightmargin=4mm\leftmargin=0mm
+    \labelwidth=0mm\labelsep=2mm
+    \setlength{\parsep}{0.5\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{0mm}
+    \partopsep=0cm}}{\end{list}}
+
+
+%------------ 1. 2. 3. 
+\newenvironment{menumerate}{\setcounter{mcounter}{0}
+\begin{list}{\bf\arabic{chapter}.\arabic{mcounter}.}{\usecounter{mcounter}
+   \rightmargin=0mm\leftmargin=0mm
+    \labelwidth=0mm\labelsep=2mm
+    \setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{5mm}
+    \partopsep=0cm}}{\end{list}}
+
+
+
+
+%------------ 1( 2( 3( 
+\newenvironment{nlist}{\setcounter{mcounter}{0}
+\begin{list}{\bf\arabic{mcounter}(}{\usecounter{mcounter}
+   \rightmargin=0mm\leftmargin=0mm
+    \labelwidth=0mm\labelsep=2mm
+    \setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{5mm}
+    \partopsep=0cm}}{\end{list}}
+
+\newenvironment{exlist}{\setcounter{mcounter}{0}
+\begin{list}{\bf\arabic{chapter}$-$\arabic{mcounter}(}{\usecounter{mcounter}
+   \rightmargin=2.5mm\leftmargin=0mm
+    \labelwidth=0mm\labelsep=4mm
+    \setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{2mm}
+    \partopsep=0cm}}{\end{list}}
+
+
+\newenvironment{klist}{\setcounter{mcounter}{0}
+\begin{list}{}{\usecounter{mcounter}
+   \rightmargin=0mm\leftmargin=0mm
+    \labelwidth=0mm\labelsep=2mm
+    \setlength{\parsep}{\parskip}
+    \setlength{\listparindent}{\parindent}
+    \setlength{\itemsep}{5mm}
+    \partopsep=0cm}}{\end{list}}
+
+
+
+\def\alef{\hbox to 9mm{1(\kern2mm }}
+\def\be{\hbox to 7mm{2(\kern2mm }}
+\def\jim{\hbox to 6mm{3(\kern2mm }}
+\def\dal{\hbox to 5mm{4(\kern2mm }}
+\newcommand{\four}[4]{\par\vskip1mm%\hskip1mm
+    \noindent\makebox[2.5cm][l]{\alef#1}\hfill
+            \makebox[2.5cm][l]{\be#2}\hfill
+            \makebox[2.5cm][l]{\jim#3}\hfill
+            \makebox[2.5cm][l]{\dal#4}\hfill
+   \par\vskip1mm}
+\newcommand{\two}[4]{\par\vskip1mm
+   \noindent\makebox[5.5cm][l]{\alef#1}\hfill
+            \makebox[5.5cm][l]{\be#2}\\[5pt]           % \newline
+            \makebox[5.5cm][l]{\jim#3}\hfill
+            \makebox[5.5cm][l]{\dal#4}
+   \par\vskip1mm}
+\newcommand{\one}[4]{\par\vskip1mm
+   \noindent\makebox[8cm][l]{\alef\parbox[t]{11.5cm}{\beginR #1}}\\[5pt]           % \newline
+           \makebox[8cm][l]{\be\parbox[t]{11.5cm}{\beginR #2}}\\[5pt]           % \newline
+            \makebox[8cm][l]{\jim\parbox[t]{11.5cm}{\beginR #3}}\\[5pt]           % \newline
+            \makebox[8cm][l]{\dal\parbox[t]{11.5cm}{\beginR #4}}\\[5pt]           % \newline
+  \par\vskip-2mm}
+
+\newcommand{\onef}[4]{\par\vskip1mm
+   \noindent\makebox[8cm][l]{\alef\parbox[t]{11.5cm}{\beginR #1}}\\[5pt]           % \newline
+           \makebox[8cm][l]{\be\parbox[t]{11.5cm}{\beginR #2}}\\[5pt]           % \newline
+            \makebox[8cm][l]{\jim\parbox[t]{11.5cm}{\beginR #3}}\\[5pt]           % \newline
+            \makebox[8cm][l]{\dal\parbox[t]{11.5cm}{\beginR #4}}\\[5pt]           % \newline
+  \par\vskip-2mm}
+
+%\newcommand{\jav}[2]{\ref{#1}({\siah ğ‰Ãş‰€‰\hamze ‚ )#2(}\\ }
+%\newcommand{\jav}[1]{\siah ğ‰Ãş‰€‰\hamze ‚ )#1( ¬‰½‰ƒ‰¼ ¨‰´.}\\ }
+%\newcommand{\iteml}[1]{\item\label{#1}}   
+
+%\newcommand{\itl}[1}{\item\label{#1}}
+
+
+
+
+
+
+%\def\alef{\hbox to 9mm{ó‰Ó \hfill(\kern2mm }}
+%\def\be{\hbox to 7mm{’ \hfill(\kern2mm }}
+%\def\jim{\hbox to 6mm{š \hfill(\kern2mm }}
+%\def\dal{\hbox to 5mm{¢ \hfill(\kern2mm }}
+%\newcommand{\fourj}[4]{\par\vskip1mm%\hskip1mm
+%    \noindent\makebox[2.5cm][l]{\alef#1}\hfill
+%            \makebox[2.5cm][l]{\be#2}\hfill
+%            \makebox[2.5cm][l]{\jim#3}\hfill
+%            \makebox[2.5cm][l]{\dal#4}\hfill
+%   \par\vskip1mm}
+%\newcommand{\twoj}[4]{\par\vskip1mm
+%   \noindent\makebox[5.5cm][l]{\alef#1}\hfill
+%            \makebox[5.5cm][l]{\be#2}\\[5pt]           % \newline
+%            \makebox[5.5cm][l]{\jim#3}\hfill
+%            \makebox[5.5cm][l]{\dal#4}
+%   \par\vskip1mm}
+%\newcommand{\onej}[4]{\par\vskip1mm
+%   \noindent\makebox[8cm][l]{\alef\parbox[t]{11.5cm}{\beginR #1}}\\[5pt]           % \newline
+%            \makebox[8cm][l]{\be\parbox[t]{11.5cm}{\beginR #2}}\\[5pt]           % \newline
+%            \makebox[8cm][l]{\jim\parbox[t]{11.5cm}{\beginR #3}}\\[5pt]           % \newline
+%            \makebox[8cm][l]{\dal\parbox[t]{11.5cm}{\beginR #4}}\\[5pt]           % \newline
+%  \par\vskip-2mm}
+
+
+%\newcommand{\jav}[2]{\ref{#1}({\siah ğ‰Ãş‰€‰\hamze ‚ )#2(}\\ }
+%\newcommand{\jav}[1]{\siah ğ‰Ãş‰€‰\hamze ‚ )#1( ¬‰½‰ƒ‰¼ ¨‰´.}\\ }
+\newcommand{\iteml}[1]{\item\label{#1}}   
+
+%\newcommand{\itl}[1}{\item\label{#1}}
+
+
+
+
+
+\def\DOTS{\hbox to 4cm {\dotfill}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   —‰ã‰‘¤ş‰Ó %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\newtheorem{t.}{\bf\large\InF{} ì‰Ì‰ƒ‰‚ \EnF{}}[chapter]
+\newtheorem{d.}[t.]{\bf\large\InF{} —‰ã‰Âş‰Ó \EnF{}}
+\newtheorem{pro.}[t.]{\bf\large\InF{} ¡‰‘¬‰ƒ‰´  \EnF{}}
+\newtheorem{l.}[t.]{\large\InF{} ó‰İ \EnF{}}
+\newtheorem{pp.}[t.]{\large \InF{}ğ‰Ã¤ù\EnF{}}
+\newtheorem{wav.}[t.]{\large \InF{}—‰±‰Ê‰Âù\EnF{}}
+\newtheorem{c.}[t.]{\large \InF{}÷‰µ‰ƒ‰¹‰‚\EnF{}}
+\newtheorem{ep.}[t.]{\bf\large\InF{} õ‰·‰‘ñ \EnF{}}
+\newtheorem{er.}{\large \InF{}—‰Ş‰Âş‰ß \EnF{}}
+\newtheorem{ex.}{\large \InF{} õ‰·‰‘ñ  \EnF{}}[chapter]
+\newtheorem{sh}{\large  }[chapter]
+
+%\newcommand{pf}{\large\bf \InF{}™‰±‰‘– \EnF{}}
+\renewcommand{\theequation}{\beginL\arabic{equation}.\thechapter\endL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\LR}{=\!\Longrightarrow}
+\newcommand{\LRa}{\Rightarrow}
+
+\newcommand{\LLR}{\Longleftrightarrow}
+\newcommand{\lr}{-\!\!\!\longrightarrow}
+\newcommand{\lrr}{-\!\!\!-\!\!\!-\!\!\!-\!\!\!\longrightarrow}
+\newcommand{\lra}{\rightarrow}
+
+\newcommand{\llr}{\longleftrightarrow}
+\newcommand{\llrr}{\leftarrow\!\!\!-\!\!-\!\!\rightarrow}
+\newcommand{\ovrl}{\overline}
+
+\newcommand{\olr}{\overrightarrow}
+\newcommand{\ner}{\nearrow}
+\newcommand{\ser}{\searrow}
+\newcommand{\lser}{-\!-\!\searrow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hs}{\hspace}
+\newcommand{\vs}{\vspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\A}{\cal A}
+\newcommand{\B}{\cal B}
+\newcommand{\C}{\cal C}
+\newcommand{\D}{{\cal D}}
+\newcommand{\E}{\cal E}
+\newcommand{\F}{\cal F}
+\newcommand{\G}{\cal G}
+\newcommand{\N}{{\cal N}}
+\newcommand{\K}{\cal K}
+\newcommand{\I}{{\cal I}}
+\newcommand{\eL}{{\cal L}}
+\newcommand{\Ra}{{\cal R}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\eb}{\engmbox}
+%\newcommand{\}{\}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\e}{\epsilon}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\vt}{\vartriangle}
+\newcommand{\al}{\alpha}
+\newcommand{\bt}{\beta}
+\newcommand{\dl}{\delta}
+\newcommand{\Dl}{\Delta}
+\newcommand{\sig}{\sigma}
+\newcommand{\lam}{\lambda}
+\newcommand{\ta}{\theta}
+\newcommand{\vta}{\vartheta}
+\newcommand{\om}{\omega}
+\newcommand{\fa}{\forall}
+\newcommand{\ex}{\exists}
+\newcommand{\nab}{\nabla}
+\newcommand{\spq}{\supseteq}
+\newcommand{\sbq}{\subseteq}
+\newcommand{\sps}{\supset}
+\newcommand{\sbs}{\subset}
+\newcommand{\nsbq}{\nsubseteq}
+\newcommand{\nspq}{\nsupseteq}
+\newcommand{\vnsbq}{\varsubsetneq}
+\newcommand{\vnspq}{\varsupsetneq}
+\newcommand{\nsps}{\supset\!\!\!\!\!/}
+\newcommand{\nsbs}{\subset\!\!\!\!\!/}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\vphi}{\varphi}
+\newcommand{\sq}{\sqrt}
+\newcommand{\cis}{\engmbox{~cis}}
+\newcommand{\dddot}{\!\!\!\!\!\stackrel{...}{\tfr{}{}}}
+%\newcommand{\par}{\partial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\MR}{{\Bbb R}}
+\newcommand{\MN}{{\Bbb N}}
+\newcommand{\MZ}{{\Bbb Z}}
+\newcommand{\MQ}{{\Bbb Q}}
+\newcommand{\MC}{{\Bbb C}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\BX}{{\blacksquare}}
+\newcommand{\vl}{\!\!\!\left.\frac{}{}\right|}
+\newcommand{\vll}{\left.\frac{\frac{}{}}{\frac{}{}}\!\!\right|}
+\newcommand{\ovl}{\overline}
+\newenvironment{vv}{\vspace{-1.40em}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\stackrel{\InF{}ş‰ß ä‰±‰‘¤– ¤ “‰‘„ı \EnF{}}{\InF{}ş‰ß ä‰±‰‘¤– õ‰ü ÷‰ş‰Æ‰À \EnF{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\dfr{\displaystyle\frac}
+\def\tfr{\textstyle\frac}
+\def\tfrac{\textstyle\frac}
+\def\fr{\frac}
+\def\nequiv{\equiv\!\!\!\!\!/~}
+\newcommand{\ti}{\times}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\cons{\engmbox{const.}}
+\def\arccot{\engmbox{arccot~}}
+\def\arcsec{\engmbox{arcsec~}}
+\def\arccsc{\engmbox{arccsc~}}
+\def\sech{\engmbox{sech}}
+\def\csch{\engmbox{csch}}
+\def\arcsinh{\engmbox{arcsinh~}}
+\def\arccosh{\engmbox{arccosh~}}
+\def\arctanh{\engmbox{arctanh~}}
+\def\arccoth{\engmbox{arccoth~}}
+\def\arcsech{\engmbox{arcsech~}}
+\def\arccsch{\engmbox{arccsch~}}
+\newcommand{\IM}{\engmbox{Im}}
+\newcommand{\RE}{\engmbox{Re}}
+\newcommand{\sgn}{\engmbox{sgn~}}
+\newcommand{\adj}{\engmbox{adj}}
+\newcommand{\tr}{\engmbox{tr}}
+%\newcommand{\deg}{\engmbox{deg}}
+\newcommand{\ra}{\engmbox{rank}}
+\newcommand{\st}{\engmbox{s.t}}
+\newcommand{\Lp}{\engmbox{Lp}}
+\newcommand{\spa}{\engmbox{span}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\beq}{\begin{eqnarray*}}
+\newcommand{\eeq}{\end{eqnarray*}}
+%\newcommand{\be}{\begin{eqnarray}}
+\newcommand{\nea}{\end{eqnarray}}
+\newcommand{\ba}{\begin{array}}
+\newcommand{\ea}{\end{array}}
+\newcommand{\lba}{\left\{\begin{array}}
+\newcommand{\ear}{\end{array}\right.}
+\newcommand{\bcf}{\begin{center}\framebox{}
+\newcommand{\ecf}{}\end{center}}
+
+\newcommand{\lbmx}{\left[\left.\begin{array}}
+\newcommand{\emxr}{\end{array}\right.\right]}
+\newcommand{\rde}{\end{array}\right.\left|\begin{array}}
+\newcommand{\lde}{\end{array}\right|\left.\begin{array}}
+
+\newcommand{\bap}{\left(\!\!\begin{array}}
+\newcommand{\eap}{\end{array}\!\!\right)}
+
+\newcommand{\bde}{\left|\begin{array}}
+\newcommand{\ede}{\end{array}\right|}
+\newcommand{\bmx}{\left[\begin{array}}
+\newcommand{\emx}{\end{array}\right]}
+\newcommand{\vra}{\overrightarrow}
+%\newcommand{\ovs#1#2}{\begin{array}{lll}\small{#1}\\ \LR \\ \small{#2} \end{array}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\si{_{~\!\!\!\!\!\!\!\!_{~_\sim}}}
+\def\lmm{\lim\limits}
+\def\intt{\displaystyle\int}
+\def\bm{\boldmath}
+\def\ubm{\unboldmath}
+\def\non{\nonumber}
+\def\smm{\sum\limits}
+\def\ent{\hfill{\BX}}
+\def\dsm{\displaystyle\sum\limits}
+\def\dsml{\displaystyle\sum\limits_{n=1}^{\infty}}
+\def\bks{\!\!\!\!}
+\def\qq{)}
+\newcommand{\pa}{\partial}
+\newcommand{\Sss}[1]{#1\!\!\!\!\!\!\diagup}
+\newcommand{\Ss}[1]{#1\!\!\!\!\!\diagup}
+\newcommand{\khat}{}
+
+\newcommand{\btl}[1]{\InE{}$\\ \blacktriangleleft\blacktriangleleft\blacktriangleleft$\EnE{}~ {\large \siah {#1}}\\ }
+%\newcommand{\btl2 }[1]{\InE{}$\\ \blacktriangleleft\blacktriangleleft$\EnE{}~ {\siah {#1}}\\ }
+\newcommand{\bo}[1]{ { \bf #1} }
+\newcommand{\titr}[1]{{\noindent    \large \siah{#1}} }
+\newcommand{\titrv}[1]{ \begin{center} {\Large\siah {#1}} \end{center}}
+\newcommand{\bex}{\begin{ex.}}
+\newcommand{\eex}{\end{ex.}}
+\def\bsr{\InE{}$\bigstar$\EnE{} ~~}
+\def\ts{{\large \siah —‰Æ‰´:}~~}
+\def\mo{{\large \siah õ‰ã‰Ş‰‘:}~}
+\def\ba{{\large \siah “‰‘¥ı ø ¤ş‰‘®‰ü:}~}
+\def\hosh{{\large \siah û‰©:}~}
+\def\mes{{\Large\siah  \InE{}$\blacksquare$\EnE{}   õ‰·‰‘ñ:}~~}
+\def\mesn{{\Large\siah   õ‰·‰‘ñ ÷‰Ö‰Ë:}~~}
+\def\faa{{\Large\siah ê‰ã‰‘ó‰ƒ‰´:}~~}
+\def\tar{{\Large\siah —‰ã‰Âş‰Ó:}~~}
+\def\nok{{\Large\siah ÷‰Ø‰µ‰‚:}~~}
+\def\nat{{\Large\siah ÷‰µ‰ƒ‰¹‰‚:}~~}
+\def\tam{{\Large\siah —‰Ş‰Âş‰ß:}~~ }
+\def\tavajoh{{\siahkhabideh  —‰›‰‚:~~}}
+\def\esb{{\Large\siah ™‰±‰‘–:}~~}
+\def\hal{{\siah\large{\framebox{•‰‘¨‰¾}}}~}
+\def\tazakor{{\Large \siah —‰Áî‰Â:}~~}
+%\newcommand{\hal}[1]{{\small {#1}} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{  0  }  % ª‰Ş‰‘¤ùı ¬‰Ô‰½‰‚ ¥ 1 ª‰Âøá õ‰üª‰¢.
+\title{ } 
+%\author{ä‰€‰ö õ‰ó‰Ó } 
+%\maketitle
+\begin{document}
+.
+\newpage
+
+
+
+
+\hfil
+\begin{tabular}{|c|}   \hline      \\
+ {\Huge  •‰Âø¦ù ¢¤§ —‰ã‰‘õ‰Û ÷‰Æ‰‘ö ø î‰‘õ‰³‰ƒ‰—‰Â}\\\\
+{\Huge   ø •‰ƒ‰‘¢ù¨‰‘¥ı ö }\\\\\\
+  {\LARGE \InE{}$]$\EnE{} Ï‰ÂŸ‰ü ¨‰‘ş‰´ î‰µ‰‘“‰¿‰‘÷‰‚ ¢ş‰¹‰ƒ‰µ‰‘ñ\InE{}$[$\EnE{} }\\\\\\
+  {\LARGE ¨‰µ‰‘¢: ›‰€‰‘’ ì‰‘ı ¢î‰µ‰Â ¤®‰ı }\\\\\\
+  {\large ¢÷‰È‰¹‰ş‰‘ö:}\\\\
+ {\large  õ‰Äğ‰‘ö õ‰µ‰Ö‰ü ™‰‘“‰´  304351079}\\\\
+ {\large ä‰Ü‰ü ¡‰Â¨‰€‰À “‰Âû‰ƒ‰Ş‰ü 381340079} \\\\
+ {\large  õ‰ú‰Âª‰‘¢ ¢ù÷‰Ş‰Ø‰ü 166208369} \\\\
+ {\large  ê‰Âş‰À ¤›‰±‰ü 000322089}\\\\
+ {\large  ê‰‘Ï‰Ş‰‚ ¤¢¨‰µ‰‘÷‰ü  088180079}\\\\
+ ¢÷‰È‰Ú‰‘ù •‰ƒ‰‘ô÷‰¤ øŸ‰À —‰ú‰Âö ª‰Ş‰‘ñ  \\\\
+ ¢ıõ‰‘ù 9931            \\     \\ \hline   
+\end{tabular}  \\
+
+\newpage 
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\section*{“‰ƒ‰‘ö õ‰Æ‰\hamze ‘ó‰‚  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+õ‰Âø¥ù î‰µ‰‘“‰¿‰‘÷‰‚û‰‘ı ¢ş‰¹‰ƒ‰µ‰‘ñ ›‰‘ş‰Ú‰‘ù øş‰Äùı ¤ ¢¤ õ‰½‰ƒ‰Íû‰‘ı õ‰¹‰‘¥ı ş‰€‰µ‰Â÷‰µ‰ü “‰‚¡‰¢ ¡‰µ‰Ê‰‘« ¢¢ù÷‰À. ş‰ßğ‰÷‰‚  î‰µ‰‘“‰¿‰‘÷‰‚û‰‘ 
+“‰‘ ¢ª‰µ‰ß ì‰‘“‰Ü‰ƒ‰´û‰‘ı “‰ƒ‰È‰µ‰Â ø •‰ƒ‰È‰Âê‰µ‰‚—‰Â “‰Âı õ‰Àş‰Âş‰´ Ï‰…ä‰‘– ¥ ¢ş‰Ú‰Â õ‰€‰‘“‰â Ï‰…ä‰‘—‰ü õ‰µ‰Ş‰‘ş‰Ã ª‰Àù÷‰À. ş‰ß —‰½‰Ö‰ƒ‰Õ î‰‚ û‰Àé ö Ï‰ÂŸ‰ü ø 
+¨‰‘¡‰´ ş‰× ¨‰ƒ‰Æ‰µ‰İ û‰Â ‰€‰À ¢¤ õ‰Ö‰ƒ‰‘§ î‰‰×  ¥ î‰µ‰‘“‰¿‰‘÷‰‚ ¢ş‰¹‰ƒ‰µ‰‘ó‰ü õ‰ü“‰‘ª‰À ¥ “‰Â¤¨‰ü  ø õ‰Î‰‘ó‰ã‰‚ ¨‰ƒ‰Æ‰µ‰İû‰‘ı î‰µ‰‘“‰¿‰‘÷‰‚ı ø õ‰Ö‰‘„–
+ø õ‰Ê‰‘Ÿ‰±‰‚ “‰‘ ¬‰‘Ÿ‰°÷‰Ñ‰Âö  
+¢¤ ş‰ß ¥õ‰ƒ‰€‰‚ ó‰ú‰‘ô ğ‰Âê‰µ‰‚ ¨‰´. ¡‰Âø›‰ü ş‰ß •‰Âø¦ù ¢¤ ì‰‘ó‰° õ‰Æ‰µ‰€‰À– •‰ƒ‰¨‰´ ø ÷‰ƒ‰Ã ¨‰‘¡‰´ ÷‰Âôê‰Ã¤ ø Ï‰ÂŸ‰ü ¨‰‘ş‰´ ö “‰‚ ÷‰È‰‘÷‰ü ó‰ƒ‰€‰× ¥ş‰Â 
+%Ï‰ÂŸ‰ü ¨‰ƒ‰Æ‰µ‰İ ÷‰Âôê‰Ã¤ı ø  •‰ƒ‰‘¢ù¨‰‘¥ı ö õ‰ü“‰‘ª‰À, î‰‚ 
+—‰Ö‰Àş‰İ Ÿ‰Ì‰¤ õ‰üğ‰Â¢¢.
+
+\hfill$ https://jsbin.com/peboluq$
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+%\subsection*{õ‰Â›‰â —‰½‰Ö‰ƒ‰Õ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%1-  ê‰Â¥÷‰‚ õ‰ƒ‰€‰ü•‰¤    )2931(- õ‰Ö‰Àõ‰‚ı “‰Â     î‰µ‰‘“‰¿‰‘÷‰‚û‰‘ı  ¢ş‰¹‰ƒ‰µ‰‘ñ  - ê‰Ê‰Ü‰€‰‘õ‰‚ î‰µ‰‘’- ¢ø¤ù û‰Ô‰Àû‰İ- ª‰Ş‰‘¤ù ¢øô  
+
+%2-  õ‰ú‰Àı ä‰Ü‰ƒ‰³‰¤ Ÿ‰‘ê‰Ñ‰ü    )9831(-  î‰µ‰‘“‰¿‰‘÷‰‚û‰‘ı  ¢ş‰¹‰ƒ‰µ‰‘ó‰ü- ê‰Ê‰Ü‰€‰‘õ‰‚ î‰µ‰‘’- ¢ø¤ù ¢ø¥¢û‰İ  
+
+%3-  õ‰ú‰Àı õ‰Ö‰ƒ‰Ş‰ü    )2931(- Ï‰ÂŸ‰ü î‰µ‰‘“‰¿‰‘÷‰‚ õ‰¹‰‘¥ı ¢¤ ¢÷‰È‰Ú‰‘ù ¥¢ ¨‰…õ‰ü —‰ú‰Âö- •‰‘ş‰‘ö÷‰‘õ‰‚ î‰‘¤ª‰€‰‘¨‰ü ¤ª‰À øŸ‰À ª‰Ş‰‘ñ —‰ú‰Âö 
+  
+%4-  ê‰ÂŸ‰€‰‘¥ ¤®‰ı    )2931(-   õ‰Ø‰‘ö¨‰€‰¹‰ü ş‰¹‰‘¢  î‰µ‰‘“‰¿‰‘÷‰‚ ¢ş‰¹‰ƒ‰µ‰‘ñ ¢¤ ¨‰‘¥õ‰‘ö ¨‰€‰¹‰Ç- •‰‘ş‰‘ö÷‰‘õ‰‚ î‰‘¤ª‰€‰‘¨‰ü ¤ª‰À î‰µ‰‘“‰À¤ı-
+%¢÷‰È‰Ú‰‘ù —‰ú‰Âö 
+
+%5- ¢î‰µ‰Â ê‰‘Ï‰Ş‰‚ ÷‰ª‰ƒ‰€‰üê‰Â¢     )5931(-  õ‰Ø‰‘ö¨‰€‰¹‰ü ş‰¹‰‘¢  î‰µ‰‘“‰¿‰‘÷‰‚ ¢ş‰¹‰ƒ‰µ‰‘ñ ¢¤ î‰µ‰‘“‰¿‰‘÷‰‚ ¢÷‰È‰Ú‰‘ù ä‰…õ‰‚ •‰‘ş‰‘ö÷‰‘õ‰‚ î‰‘¤ª‰€‰‘¨‰ü ¤ª‰À-
+%  ¢÷‰È‰Ú‰‘ù ä‰…õ‰‚
+
+
+ª‰‘ş‰‘ö £î‰Â ¨‰´ î‰‚ ÷‰ƒ‰‘¥û‰‘ı ä‰Ş‰Ü‰ƒ‰‘—‰ü î‰‘¤“‰Âö Ÿ‰‘¬‰Û “‰Â¤¨‰ü ø •‰Äøû‰Ç ¢¤ õ‰Ö‰‘„–  ø ÷‰ƒ‰Ã ¨‰ƒ‰Æ‰µ‰İû‰‘ı î‰µ‰‘“‰¿‰‘÷‰‚ı
+õ‰¤¢ õ‰Î‰‘ó‰ã‰‚ “‰¢ù ¨‰´.   
+
+
+\newpage
+
+
+\hfil {\Large “‰Æ‰Ş‰‚ —‰ã‰‘ó‰ü}
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\section*{õ‰Ö‰Àõ‰‚  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+•‰Âø¦ù õ‰¤¢ “‰½‰¶ Ï‰ÂŸ‰ü ¤“‰Í î‰‘¤“‰Âı \InE{}$(UI)$\EnE{} ş‰× ¨‰ƒ‰Æ‰µ‰İ ¢ş‰¹‰ƒ‰µ‰‘ó‰ü õ‰‘÷‰´ î‰µ‰‘’ õ‰ü“‰‘ª‰À. î‰‘¤“‰Âö “‰‘ ä‰Ì‰ş‰´ ¢¤ ş‰ß ¨‰ƒ‰Æ‰µ‰İ õ‰ü—‰÷‰€‰À  ¥ õ‰Ø‰‘÷‰‘– ö ¥ ›‰Ş‰Ü‰‚ ì‰‘“‰Ü‰ƒ‰´ ¤¥¤ø î‰µ‰‘’, õ‰‘÷‰´ î‰µ‰‘’ ø 
+›‰Æ‰µ‰¹‰ı î‰µ‰‘’ ø ... “‰ú‰Âùõ‰€‰À ª‰÷‰À. ¢¤ ¬‰¤—‰üî‰‚ ê‰Â¢ ä‰Ì‰ş‰´ ÷‰Àª‰µ‰‚ “‰‘ª‰À, ş‰ß õ‰Ø‰‘ö “‰Âş‰Ç ê‰Âû‰İ ğ‰Â¢ş‰Àù î‰‚ ¥ •‰‘¤ùı 
+ ¥ ì‰‘“‰Ü‰ƒ‰´û‰‘ı ¨‰ƒ‰Æ‰µ‰İ ÷‰Ñ‰ƒ‰Â ›‰Æ‰µ‰¹‰ı û‰ª‰Ş‰€‰À î‰µ‰‘’ ¨‰µ‰Ô‰‘¢ù î‰Â¢ù ø ¢¤ ¬‰¤– —‰Ş‰‘ş‰Û “‰‚ ä‰Ì‰ş‰´ î‰µ‰‘“‰¿‰‘÷‰‚ ¢¤ş‰À.      
+    
+ 
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{ğ‰Ã¤© øó‰ƒ‰‚ ª‰€‰‘¡‰´ ¨‰ƒ‰Æ‰µ‰İ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ş‰ß ¨‰ƒ‰Æ‰µ‰İ “‰‘ û‰Àé ¬‰Ü‰ü —‰Æ‰Âş‰â ä‰Ş‰Ü‰ƒ‰‘– “‰‚ õ‰‘÷‰´ ğ‰Âê‰µ‰ß î‰µ‰‘’ õ‰ü“‰‘ª‰À î‰‚ “‰‘ä‰¶ ¨‰Âøş‰Å¢û‰ü ¨‰Âş‰â ø ¨‰‘ö “‰Âı î‰µ‰‘“‰¿‰‘÷‰‚ ¡‰û‰À ª‰À.
+÷‰ƒ‰‘¥û‰‘ı ä‰Ş‰Ü‰ƒ‰‘—‰ü  ¨‰ƒ‰Æ‰µ‰İ ¢¤ ì‰‘ó‰° ›‰Àøñ ª‰Ş‰‘¤ù )1( “‰Âı ¨‰ƒ‰Æ‰µ‰İ   î‰µ‰‘“‰¿‰‘÷‰‚ —‰ã‰Âş‰Óª‰Àù ¨‰´. 
+
+\hfil  ›‰Àøñ )1(- ÷‰ƒ‰‘¥û‰‘ı ä‰Ş‰Ü‰ƒ‰‘—‰ü  
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+ ¤¢ş‰Ó  &  ª‰Â ÷‰ƒ‰‘¥    \\  \hline 
+ 1 &   õ‰Ø‰‘ö ä‰Ì‰ş‰´ î‰‘¤“‰Â ›‰Àş‰À   \\  \hline 
+2  & õ‰Ø‰‘ö õ‰‘÷‰´ î‰µ‰‘’ ¢¤ ¬‰¤– õ‰›‰¢ “‰¢ö      \\  \hline 
+ 3 &  õ‰Ø‰‘ö ¤¥¤ø  î‰µ‰‘’ ¢¤ ¬‰¤– õ‰›‰¢ “‰¢ö      \\  \hline 
+4  &   õ‰Ø‰‘ö ó‰ç‰ ¤¥¤ø  î‰µ‰‘’    \\  \hline 
+5  &   õ‰Ø‰‘ö ø¤ø¢ î‰‘¤“‰Â “‰‚¬‰¤– õ‰ƒ‰ú‰Ş‰‘ö     \\  \hline 
+6  &    õ‰Ø‰‘ö ›‰Æ‰µ‰¹‰ı î‰µ‰‘’ “‰Â¨‰‘§ ÷‰‘ô î‰µ‰‘’, ÷‰‘ô õ‰\hamze ó‰Ó ø õ‰®‰á   \\  \hline 
+7  &   õ‰Ø‰‘ö “‰Âğ‰Â¢÷‰Àö î‰µ‰‘’    \\  \hline 
+ 8 &  õ‰Ø‰‘ö ÷‰Ş‰‘ş‰Ç ø®‰ã‰ƒ‰´ î‰‘õ‰Û ä‰Ì‰‘     \\  \hline 
+\end{tabular}
+
+
+
+\hfill$\epsfxsize=13cm
+\epsfysize=9cm
+\epsffile{2.eps}$
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{1- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü ™‰±‰´÷‰‘ô   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ğ‰Â î‰‘¤“‰Â “‰Âı øó‰ƒ‰ß “‰‘¤ ø¤¢ ¨‰ƒ‰Æ‰µ‰İ î‰µ‰‘“‰¿‰‘÷‰‚ ª‰Àù “‰‘ª‰À, õ‰ü—‰÷‰À “‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰¤¢ )\InE{}sign in\EnE{}( ¨‰µ‰Ô‰‘¢ù 
+“‰‚ ä‰Ì‰ş‰´ ¨‰ƒ‰Æ‰µ‰İ ¢¤ş‰À: 
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &  ø¤ø¢ “‰‚ ¨‰ƒ‰Æ‰µ‰İ   \\  \hline 
+ •‰ƒ‰Çê‰Â­ 1 &   î‰‘¤“‰Â “‰‚¬‰¤– õ‰ã‰µ‰±‰Â ø¤¢ ¨‰ƒ‰Æ‰µ‰İ ª‰Àù ¨‰´.    \\  \hline 
+ª‰Â   & î‰‘¤“‰Â ¥ Ï‰Âş‰Õ \InE{}sign in\EnE{} ø ¥ ¬‰Ô‰½‰‚ ™‰±‰´÷‰‘ô õ‰üª‰¢ ø Ï‰…ä‰‘– „¥ô ¤ ™‰±‰´ õ‰ü÷‰Ş‰‘ş‰À.      \\  \hline 
+\end{tabular}
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{2- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü ›‰Æ‰µ‰¹‰ı î‰µ‰‘’    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰¤¢ î‰‘¤“‰Â õ‰ü—‰÷‰À î‰µ‰‘’ õ‰¤¢ ÷‰Ñ‰Â ¤ “‰Â¨‰‘§ ÷‰‘ô õ‰\hamze ó‰Ó, ÷‰‘ô î‰µ‰‘’  ø ş‰‘ õ‰®‰á ›‰Æ‰µ‰¹‰ î‰€‰À.
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &  ›‰Æ‰µ‰¹‰    \\  \hline 
+ û‰Àé&   ›‰Æ‰µ‰¹‰ı î‰µ‰‘’ ø ÷‰Ş‰‘ş‰Ç ÷‰µ‰‘ş‰¸ ›‰Æ‰µ‰¹‰     \\  \hline 
+ª‰Â   &î‰‘¤“‰Â “‰‘ ¨‰‚ ¤ø© )›‰Æ‰µ‰¹‰ “‰Â¨‰‘§ ÷‰‘ô õ‰\hamze ó‰Ó- î‰µ‰‘’ ø õ‰®‰á( î‰µ‰‘’  ¤ ›‰Æ‰µ‰¹‰ \\ 
+ &  õ‰üî‰€‰À  ø ¨‰ƒ‰Æ‰µ‰İ î‰µ‰‘’û‰‘ş‰ü “‰‘ õ‰È‰¿‰Ê‰‘– õ‰¤¢÷‰Ñ‰Â ¤ “‰‚ä‰€‰ö ÷‰µ‰ƒ‰¹‰‚ ›‰Æ‰µ‰¹‰ ø\\  
+ &  “‰‚¬‰¤– ş‰× ›‰Àøñ ÷‰Ş‰‘ş‰Ç õ‰ü¢û‰À.      \\  \hline 
+\end{tabular}
+
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{3- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü ¤¥¤ø î‰µ‰‘’    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰¤¢ ¨‰µ‰Ô‰‘¢ù, î‰‘¤“‰Â õ‰ü—‰÷‰À î‰µ‰‘’ õ‰¤¢ ÷‰Ñ‰Â ¤ ¢¤ ¬‰¤– õ‰Ø‰‘ö ¤¥¤ø ø ¢¤ ê‰Â¬‰´ õ‰€‰‘¨‰° ş‰ß î‰µ‰‘’ ¤ “‰‚ 
+õ‰‘÷‰´ “‰Ú‰ƒ‰Â¢. 
+
+
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &  ¤¥¤ø î‰µ‰‘’     \\  \hline 
+ û‰Àé&  ™‰±‰´ ş‰× ¤¥¤ø      \\  \hline 
+ª‰Â   &•‰Å ¥ ø¤ø¢ î‰‘¤“‰Â “‰‚ ¨‰ƒ‰Æ‰µ‰İ î‰µ‰‘“‰¿‰‘÷‰‚ ¥ Ï‰Âş‰Õ õ‰€‰ı ¢¤¬‰¤– —‰‘ş‰ƒ‰À ä‰Ì‰ş‰´ ¥ Ï‰Âş‰Õ   \\ 
+  & ›‰Æ‰µ‰¹‰  ø ÷‰µ‰¿‰‘’ î‰µ‰‘’  õ‰¤¢ ÷‰Ñ‰Â ø ¢¤ ¬‰¤–  ø›‰¢ ¤¥¤ø ÷‰¹‰‘ô õ‰üğ‰Â¢¢.   \\  \hline
+ \end{tabular}
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{4- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü ó‰ç‰ ¤¥¤ø î‰µ‰‘’    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰¤¢ ¨‰µ‰Ô‰‘¢ù, î‰‘¤“‰Â õ‰ü—‰÷‰À î‰µ‰‘“‰ü ¤ î‰‚ ì‰±‰\nasb … ¤¥¤ø î‰Â¢ù ¨‰´, ¥ Ÿ‰‘ó‰´ ¤¥¤ø ¡‰‘¤š î‰€‰À. 
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &  ó‰ç‰ ¤¥¤ø     \\  \hline 
+ û‰Àé&  î‰µ‰‘“‰ü î‰‚ ì‰±‰\nasb … ¤¥¤ø ª‰Àù ¨‰´ ¥ Ÿ‰‘ó‰´ ¤¥¤ø ¡‰‘¤š õ‰üª‰¢.      \\  \hline
+ª‰Â   &    î‰‘¤“‰Â ğ‰Ãş‰€‰‚ ó‰ç‰ ¤¥¤ø ¤ ÷‰µ‰¿‰‘’ î‰Â¢ù ø ¨‰ƒ‰Æ‰µ‰İ, ä‰Ì‰ş‰´ î‰‘¤“‰Â  ¤ î‰€‰µ‰Âñ  î‰Â¢ù ø ¥ Ï‰Âş‰Õ\\
+ &  ›‰Æ‰µ‰¹‰ı î‰µ‰‘’ õ‰¤¢÷‰Ñ‰Â, ä‰Ş‰Û ó‰ç‰ ¤¥¤ø ¤ ™‰±‰´ õ‰üî‰€‰À.   \\ \hline
+ \end{tabular}
+
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{5- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü õ‰‘÷‰´  î‰µ‰‘’    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰¤¢ ¨‰µ‰Ô‰‘¢ù, î‰‘¤“‰Â õ‰ü—‰÷‰À î‰µ‰‘’ õ‰¤¢÷‰Ñ‰Â ¡‰¢ ¤ ¢¤ ¬‰¤—‰üî‰‚ ì‰±‰\nasb …  ¤¥¤ø î‰Â¢ù ¨‰´
+ø ş‰‘ “‰‚ õ‰‘÷‰´ ğ‰Âê‰µ‰‚ ÷‰È‰Àù “‰‘ª‰À “‰‚ õ‰‘÷‰´ “‰Ú‰ƒ‰Â¢. 
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &  õ‰‘÷‰´ î‰µ‰‘’      \\  \hline 
+ û‰Àé&  ™‰±‰´ ş‰× õ‰‘÷‰´ ø —‰½‰ş‰Û î‰µ‰‘’     \\  \hline
+ª‰Â   &    î‰‘¤“‰Â ğ‰Ãş‰€‰‚ õ‰‘÷‰´  ¤ ÷‰µ‰¿‰‘’ î‰Â¢ù ø  •‰Å ¥ —‰‘ş‰ƒ‰À ä‰Ì‰ş‰´ î‰‘¤“‰Â ¥ Ï‰Âş‰Õ ›‰Æ‰µ‰¹‰ı \\
+ &  î‰µ‰‘’   õ‰¤¢÷‰Ñ‰Â, ¨‰ƒ‰Æ‰µ‰İ •‰Å ¥ “‰Â¤¨‰ü ø›‰¢ î‰µ‰‘’ ø õ‰Ø‰‘ö  õ‰‘÷‰´ ö¤™‰±‰´ î‰Â¢ù\\
+&  ø î‰µ‰‘“‰À¤ î‰µ‰‘’ ¤ —‰½‰ş‰Û õ‰ü¢û‰À. \\ \hline
+ \end{tabular}
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{6- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü “‰‘¥ğ‰Â¢÷‰Àö   î‰µ‰‘’    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰Ø‰‘ö  î‰‘¤“‰Â õ‰ü—‰÷‰À î‰µ‰‘“‰ü ¤ î‰‚  ì‰±‰\nasb …  õ‰‘÷‰´  ğ‰Âê‰µ‰‚  ¨‰´, “‰‚ î‰µ‰‘“‰¿‰‘÷‰‚ “‰‘¥ğ‰Â¢÷‰À.
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &“‰‘¥ğ‰Â¢÷‰Àö  ø ä‰¢– î‰µ‰‘’      \\  \hline 
+ û‰Àé&  “‰‘¥ğ‰Â¢÷‰Àö î‰µ‰‘’ õ‰‘÷‰´ ¢¢ù ª‰Àù ø ™‰±‰´ “‰‘¥ğ‰È‰´      \\  \hline
+ª‰Â   & “‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß ì‰‘“‰Ü‰ƒ‰´ î‰‘¤“‰Â î‰µ‰‘’ ¤ ¢¤ ¬‰¤—‰üî‰‚ ¥ —‰‘¤ş‰¾ ä‰¢– ö ÷‰Ú‰Áª‰µ‰‚ “‰‘ª‰À,      \\
+&  “‰‚ î‰µ‰‘“‰¿‰‘÷‰‚ “‰‘¥ õ‰üğ‰Â¢÷‰À. \\ \hline
+ \end{tabular}
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{7- ÷‰ƒ‰‘¥ ä‰Ş‰Ü‰ƒ‰‘—‰ü ø¤ø¢ “‰‚ ¨‰ƒ‰Æ‰µ‰İ õ‰ú‰Ş‰‘ö    }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ¨‰µ‰Ô‰‘¢ù ¥ ş‰ß õ‰Ø‰‘ö  î‰‘¤“‰Â õ‰ü—‰÷‰À “‰Àøö ™‰±‰´÷‰‘ô ø ¬‰Âê‰\nasb ‘ “‰‚ä‰€‰ö õ‰ú‰Ş‰‘ö “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø¤¢ ª‰Àù ø ›‰Æ‰µ‰¹‰ı „¥ô ¤ ÷‰¹‰‘ô ¢û‰À,
+¢¤ ş‰ß Ÿ‰‘ó‰´ ì‰‘“‰Ü‰ƒ‰´û‰‘ı ¢ş‰Ú‰Â ¨‰ƒ‰Æ‰µ‰İ    ›‰Ã ›‰Æ‰µ‰¹‰ ø ™‰±‰´÷‰‘ô “‰Âı î‰‘¤“‰Â ê‰Âû‰İ ÷‰Ş‰ü“‰‘ª‰À.  
+
+
+\hfil
+\begin{tabular}{|c|c|}
+\multicolumn{2}{c}{ } \\[9pt] \hline 
+õ‰¤¢ ¨‰µ‰Ô‰‘¢ù    &ø¤ø¢ “‰‚¬‰¤– õ‰ú‰Ş‰‘ö      \\  \hline 
+ û‰Àé&  î‰‘¤“‰Â “‰µ‰÷‰À “‰‚¬‰¤–  õ‰ú‰Ş‰‘ö    “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø¤¢ ª‰¢. \\  \hline
+ª‰Â   &   î‰‘¤“‰Â “‰Àøö î‰‘÷‰´ ø \InE{}log in \EnE{} “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø¤¢ õ‰üª‰¢ ø ê‰Ö‰Í   õ‰Ø‰‘÷‰‘– ›‰Æ‰µ‰¹‰ ø ™‰±‰´÷‰‘ô \\
+&   “‰Âı î‰‘¤“‰Â ê‰Âû‰İ ¨‰´.  \\ \hline
+ \end{tabular}
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\section*{ê‰Âôû‰‘ı ¨‰ƒ‰Æ‰µ‰İ   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{1- ê‰Âô  ø¤ø¢ “‰‚ ¨‰ƒ‰Æ‰µ‰İ     }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ş‰ß ê‰Âô õ‰Ø‰‘ö ø¤¢ ª‰Àö “‰‚ ¨‰ƒ‰Æ‰µ‰İ ¤ ê‰Âû‰İ õ‰üî‰€‰À ‰€‰‘÷‰»‰‚ “‰‚¬‰¤– õ‰ú‰Ş‰‘ö )“‰Àøö  \InE{}log in \EnE{} î‰Â¢ö( ø¤¢ ª‰¢ ¬‰Âê‰\nasb ‘ õ‰ü—‰÷‰À
+›‰Æ‰µ‰¹‰ ¤ ÷‰¹‰‘ô ¢¢ù ø ÷‰µ‰‘ş‰¸ ¤ õ‰È‰‘û‰Àù ÷‰Ş‰‘ş‰À. 
+
+
+\hfil$\epsfxsize=16cm
+\epsfysize=13cm
+\epsffile{6.eps}$
+
+û‰Ş‰‘÷‰Î‰¤ î‰‚ õ‰È‰‘û‰Àù õ‰üğ‰Â¢¢ ğ‰Ãş‰€‰‚û‰‘ı \InE{}log in \EnE{}  ø \InE{}sign in \EnE{} ›‰ú‰´ ø¤ø¢ “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø •‰Âøê‰‘ş‰Û  î‰‘¤“‰Âı ø ÷‰ƒ‰Ã ›‰ú‰´ ™‰±‰´÷‰‘ô 
+ğ‰€‰¹‰‘÷‰Àù ª‰Àù ¨‰´. •‰Å ¥ ê‰È‰Â¢ö î‰Ü‰ƒ‰À ›‰Æ‰µ‰¹‰ ÷‰µ‰‘ş‰¸ ¢¤ ¬‰Ô‰½‰‚ ÷‰µ‰‘ş‰¸ ›‰Æ‰µ‰¹‰ ğ‰Ã¤© õ‰üğ‰Â¢¢. 
+
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{2- ê‰Âô ÷‰µ‰‘ş‰¸ ›‰Æ‰µ‰¹‰ ø ¢¤¡‰¨‰´ õ‰‘÷‰´ ş‰‘ ¤¥¤ø î‰µ‰‘’     }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+¢¤ ş‰ß ê‰Âô î‰‘¤“‰Â õ‰ü—‰÷‰À ÷‰µ‰‘ş‰¸ ›‰Æ‰µ‰¹‰ ¤ “‰‘ ê‰Âõ‰´ £ş‰Û õ‰…Ÿ‰Ñ‰‚ ÷‰Ş‰‘ş‰À. ó‰±‰µ‰‚  ‰€‰‘÷‰»‰‚ î‰‘¤“‰Â ¢¤ı \InE{}Account\EnE{} “‰¢ù ø 
+ \InE{}log in \EnE{} î‰Â¢ù “‰‘ª‰À õ‰ü—‰÷‰À “‰‚ ê‰ƒ‰Ü‰À ø®‰ã‰ƒ‰´  î‰‚ õ‰ü—‰÷‰À ş‰Ø‰ü ¥ õ‰¤¢ )õ‰›‰¢- ÷‰‘õ‰›‰¢- õ‰‘÷‰´ ¢¢ùª‰Àù- ¤¥¤ø ª‰Àù( “‰‘ª‰À
+¢¤ ¬‰¤– õ‰›‰¢ “‰¢ö ö¤ “‰‚ õ‰‘÷‰´ ğ‰Âê‰µ‰‚ ø ş‰‘ ¤¥¤ø  ÷‰Ş‰‘ş‰À. ó‰±‰µ‰‚ ¢¤¬‰¤—‰üî‰‚ ø®‰ã‰ƒ‰´ î‰µ‰‘’ õ‰‘÷‰´ ¢¢ù ª‰Àù “‰‘ª‰À ¬‰Âê‰\nasb ‘
+õ‰ü—‰÷‰À ¢¤¡‰¨‰´ ¤¥¤ø ÷‰Ş‰‘ş‰À.  \\ 
+ 
+
+
+\hfil$\epsfxsize=16cm
+\epsfysize=14cm
+\epsffile{7.eps}$
+% \InE{}$\vs{-9cm}$\EnE{}
+
+‰€‰‘÷‰»‰‚ î‰‘¤“‰Â “‰‚ ¨‰ƒ‰Æ‰µ‰İ \InE{}log in\EnE{} ÷‰Ø‰Â¢ù “‰‘ª‰À, •‰ƒ‰ç‰‘ô ê‰ë ¤ õ‰…Ÿ‰Ñ‰‚ ¡‰û‰À î‰Â¢, ¢¤ è‰ƒ‰Â ş‰ß¬‰¤– ğ‰Ãş‰€‰‚ ¢¤¡‰¨‰´ õ‰‘÷‰´ 
+¤øª‰ß ª‰Àù ø õ‰ü–ø÷‰À   ì‰Àô “‰‚ õ‰‘÷‰´ î‰µ‰‘’ ÷‰Ş‰‘ş‰À. „¥ô “‰‚ —‰®‰ƒ‰¼ ¨‰´, ‰€‰‘÷‰»‰‚ ø®‰ã‰ƒ‰´ õ‰‘÷‰´ ¢¢ù ª‰Àù  “‰‘ª‰À, ¢¤ ä‰Ş‰Ü‰ƒ‰‘–
+¬‰Âê‰\nasb ‘ ğ‰Ãş‰€‰‚ ¤¥¤ø ê‰ã‰‘ñ ¡‰û‰À “‰¢.
+
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{3- ê‰Âô Ï‰…ä‰‘– î‰‘¤“‰Âı  )\InE{}Profile\EnE{}(   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+“‰‘ ø¤ø¢ “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø  \InE{}log in\EnE{} î‰Â¢ö, ¢¤ ¬‰¤– —‰‘ş‰ƒ‰À ä‰µ‰±‰‘¤ —‰¨‰Í ¨‰ƒ‰Æ‰µ‰İ î‰‘¤“‰Â ø¤¢ ¨‰ƒ‰Æ‰µ‰İ ª‰Àù ø ê‰Âô £ş‰Û ÷‰Ş‰‘ş‰Ç ¢¢ù õ‰üª‰¢.  
+
+
+
+
+\hfil$\epsfxsize=16cm
+\epsfysize=13cm
+\epsffile{8.eps}$
+
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{4- ê‰Âô “‰Âğ‰È‰´ î‰µ‰‘’   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+¢¤ ş‰ß õ‰¤¢ ¨‰µ‰Ô‰‘¢ù î‰‘¤“‰Â õ‰ü—‰÷‰À •‰Å ¥ ø¤¢ ª‰Àö “‰‚ Ï‰…ä‰‘– î‰‘¤“‰Âı ø •‰Âøê‰‘ş‰Û  ø “‰‘ ÷‰µ‰¿‰‘’ ğ‰Ãş‰€‰‚ õ‰‘÷‰´ ğ‰Âê‰µ‰‚ ª‰Àù
+¤ “‰‘¥ î‰€‰À ø “‰‘ •‰‘¨‰¾ “‰‚ ¨‰\hamze ñ 'ş‰‘ ş‰ß î‰µ‰‘’ ¤ “‰Âğ‰È‰´ õ‰ü¢û‰ƒ‰À?" ¤øı ğ‰Ãş‰€‰‚ '“‰Ü‰‚" î‰Ü‰ƒ‰× î‰Â¢ù ø •‰ƒ‰ç‰‘ô ¥ş‰Â ¤ õ‰È‰‘û‰Àù ÷‰Ş‰‘ş‰À.
+
+\hfil    *Ï‰…ä‰‘– “‰‚ î‰µ‰‘“‰¿‰‘÷‰‚ ¤¨‰‘ñ ª‰À.*
+
+“‰‘ ş‰ß ä‰Ş‰Ü‰ƒ‰‘– õ‰ü—‰÷‰À Ï‰…ä‰‘– î‰µ‰‘’ ¤ “‰‚ î‰µ‰‘“‰¿‰‘÷‰‚ ¤¨‰‘ñ ø ì‰Àô “‰‚ ä‰¢– î‰µ‰‘’ “‰‚¬‰¤– ê‰ƒ‰Ãş‰Ø‰ü ÷‰Ş‰‘ş‰À î‰‚ ¢¤ ¬‰Ô‰½‰‚
+ “‰ã‰À õ‰È‰¿‰É ª‰Àù ¨‰´: 
+
+
+\hfil$\epsfxsize=16cm
+\epsfysize=16cm
+\epsffile{9.eps}$
+
+
+
+ \InE{}$\vs{-10cm}$\EnE{}
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{5- ê‰Âô ó‰ç‰ ¤¥¤ø      }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+¢¤ ş‰ß õ‰¤¢ ¨‰µ‰Ô‰‘¢ù î‰‘¤“‰Â •‰Å ¥ ø¤¢ ª‰Àö “‰‚ ¨‰ƒ‰Æ‰µ‰İ ø ø¤ø¢ “‰‚ •‰Âøê‰‘ş‰Û ¡‰¢ õ‰ü—‰÷‰À ¥ Ï‰Âş‰Õ ğ‰Ãş‰€‰‚ î‰µ‰° ¤¥¤ø ª‰Àù
+ ó‰ƒ‰Æ‰´ î‰µ‰° ¤¥¤øı ¡‰¢ ¤ õ‰È‰‘û‰Àù ø ÷‰ú‰‘ ¤ ó‰ç‰ ¤¥¤ø ÷‰Ş‰‘ş‰À.
+
+
+
+\hfil$\epsfxsize=13cm
+\epsfysize=11cm
+\epsffile{9-1.eps}$
+
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                
+\subsection*{6- ê‰Âô ™‰±‰´÷‰‘ô ø ä‰Ì‰ş‰´    )\InE{}sign in \EnE{}(  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+¢¤ ş‰ß ê‰Âô î‰‘¤“‰Â õ‰ú‰Ş‰‘ö õ‰ü—‰÷‰À ä‰Ì‰ ª‰¢ø “‰‘ ä‰Ì‰ş‰´ ¢¤ î‰µ‰‘“‰¿‰‘÷‰‚ “‰‘ õ‰Ø‰‘÷‰‘– ö “‰‚ä‰€‰ö î‰‘¤“‰Â õ‰¹‰‘¥ ¨‰µ‰Ô‰‘¢ù ÷‰Ş‰‘ş‰À. “‰‘ î‰Ü‰ƒ‰×
+¤øı   \InE{}sign in \EnE{} ¢¤ ¬‰Ô‰½‰‚ ¬‰Ü‰ü, ê‰Âô ™‰±‰´÷‰‘ô “‰‘¥ õ‰üğ‰Â¢¢ ø Ï‰…ä‰‘– „¥ô ¤ ø¤¢ î‰Â¢ù ø ä‰Ø‰Å •‰Â¨‰€‰Ü‰ü ¡‰¢ ¤ ÷‰ƒ‰Ã •‰Ü‰¢ õ‰ü÷‰Ş‰‘ş‰À
+ ø —‰\hamze ‘ş‰ƒ‰À õ‰üî‰€‰À ø Ï‰…ä‰‘– î‰‘¤“‰Â ™‰±‰´ õ‰üª‰¢.  \\
+
+
+
+\hfil$\epsfxsize=15cm
+\epsfysize=13cm
+\epsffile{10.eps}$
+
+¢¤ ¬‰¤– ¢¤š Ï‰…ä‰‘– ÷‰‘ì‰É ø ş‰‘ ä‰Àô •‰Ü‰¢ ä‰Ø‰Å —‰¨‰Í ¨‰ƒ‰Æ‰µ‰İ, •‰ƒ‰ç‰‘ôû‰‘ı õ‰€‰‘¨‰° ¤‰‚ õ‰üğ‰Â¢¢.   
+
+
+\newpage
+
+\hfil$\epsfxsize=15cm
+\epsfysize=14cm
+\epsffile{11.eps}$
+
+
+
+
+\newpage
+
+\hfil$\epsfxsize=17cm
+\epsfysize=13cm
+\epsffile{12.eps}$
+
+\end{document}
