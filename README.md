@@ -8,11 +8,11 @@
 ### مژگان متقی ثابت 
 
 ---
-- [حساب گیت هاب]https://mozhganmottaghi.github.io/mozhgan.mottaghi/
-- [آدرس رزومه]https://mozhganmottaghi.github.io/mozhgan.mottaghi/
-- [sop]https://github.com/mozhganmottaghi/SOP
+- [حساب گیت هاب](https://mozhganmottaghi.github.io/mozhgan.mottaghi/)
+- [آدرس رزومه](https://mozhganmottaghi.github.io/mozhgan.mottaghi/)
+- [sop](https://github.com/mozhganmottaghi/SOP)
 
--[My Certificate](java.jpeg)
+- [My Certificate](java.jpeg)
 
 
 -------------------
