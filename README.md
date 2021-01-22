@@ -11,8 +11,8 @@
 - [حساب گیت هاب](https://mozhganmottaghi.github.io/mozhgan.mottaghi/)
 - [آدرس رزومه](https://mozhganmottaghi.github.io/mozhgan.mottaghi/)
 - [sop](https://github.com/mozhganmottaghi/SOP)
-
-- [My Certificate](java.jpeg)
+- [jlord certificate](jlord.png)
+- [Java script Certificate](java.jpeg)
 
 
 -------------------
