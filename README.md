@@ -22,8 +22,8 @@
 - [خلاصه ارزیابی بخش عمومی](MM_GeneralSection_CheckList_AR_3991.pdf)
 
 ##  بخش دروس کارشناسی
-- [خلاصه ارزیابی درس تعامل انسان و کامپیوتر]()
-- [خلاصه ارزیابی درس نظریه زبان و ماشین]()
+- [خلاصه ارزیابی درس تعامل انسان و کامپیوتر](https://github.com/mozhganmottaghi/PNU_3991_AR/blob/main/HumanComputerlnteraction/%D9%BE%D8%B1%D9%88%DA%98%D9%87/27_HumanComputerInteraction_CheckList_AR_3991%20(1).pdf)
+- [خلاصه ارزیابی درس نظریه زبان و ماشین](https://github.com/mozhganmottaghi/PNU_3991_AR/blob/main/Theory-of-Languages-and-machines/%D9%BE%D8%B1%D9%88%DA%98%D9%87/59_Theory-of-Languages-and-Machines_CheckList_AR_3991.pdf)
 
 ------
 
